@@ -21,12 +21,29 @@ function fetchData() {
         for (var j = i; j < Math.min(i + 3, data.network.length); j++) {
           $("#network-container .network-group:eq(" + groupIndex + ")").append(`
             <div class="network-card">
+              <p id="ping">Ping ~ ${data.network[j].ping}ms</p>
               <h3>${data.network[j].gw_name}</h3>
-              <p>${data.network[j].line1}</p>
-              <p>${data.network[j].line2}</p>
-              <p>${data.network[j].line3}</p>
-              <p>${data.network[j].line4}</p>
-              <p>${data.network[j].line5}</p>
+              <p id="ispname">${data.network[j].ispname}</p>
+              <div id="ap-imggroup">
+              <img src="img/ap.png" id="ap-img"></img>
+              </div>
+              <div id="ap-info">
+              <div id="activeap-group">
+              <p id="totalaptext">  ${data.network[j].totalap}  </p>
+              <img src="img/ok.png" class="person-img"></img>
+              </div>
+              <div id="disconnectedap-group">
+              <p id="totalapdsctext">  ${data.network[j].totalapdsc}  </p>
+              <img src="img/fail.png" class="person-img"></img>
+              </div>
+              </div>
+              <div id="user-uptime">
+              <div id="users">
+              <p>${data.network[j].users}</p>
+              <img src="img/person.png" class="person-img"></img>
+              </div>
+              </div>
+              <p id="wanup">Uptime: ${data.network[j].wanup} days</p>
             </div>
           `);
         }
@@ -39,12 +56,20 @@ function fetchData() {
         for (var j = i; j < Math.min(i + 3, data.qsc.length); j++) {
           $("#qsc-container .qsc-group:eq(" + groupIndex + ")").append(`
             <div class="qsc-card">
-              <h3>${data.qsc[j].core_name}</h3>
-              <p>${data.qsc[j].line1}</p>
-              <p>${data.qsc[j].line2}</p>
-              <p>${data.qsc[j].line3}</p>
-              <p>${data.qsc[j].line4}</p>
-              <p>${data.qsc[j].line5}</p>
+              <h3 id="core-name">${data.qsc[j].core_name}</h3>
+              <p id="model">${data.qsc[j].model}</p>
+              <div id="qscgroup">
+              <div id="okqsc">
+              <p>${data.qsc[j].OK}</p>
+              <img src="img/ok.png" class="person-img"></img>
+              </div>
+              <div id="errorqsc">
+              <p>${data.qsc[j].Fault}</p>
+              <img src="img/fail.png" class="person-img"></img>
+              </div>
+              </div>
+              <p id="qscuptime">Uptime: ${data.qsc[j].uptime} days</p>
+              <p id="design">Running design: ${data.qsc[j].name}</p>
             </div>
           `);
         }

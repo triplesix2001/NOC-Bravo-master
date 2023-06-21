@@ -1,76 +1,230 @@
 body {
-    background-color: rgb(50, 50, 50);
+  background-color: rgb(253, 253, 253);
+  scrollbar-width: none;
 }
 
+#network-container,
+#qsc-container {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  overflow: -moz-scrollbars-none;
+}
+
+
+/* CSS FOR CARDS */
 #info-wrapper {
   display: flex;
   flex-direction: column;
 }
 
-#network-container,
-#qsc-container {
+#network-tittel, #qsc-tittel {
+  color: rgb(0, 0, 0);
+  font-family: 'Rubik', sans-serif;
+  text-align: center;
+}
+
+#network-container, #qsc-container {
   display: flex;
   overflow-x: auto;
   scroll-snap-type: x mandatory;
   scroll-behavior: smooth;
 }
 
-.network-group,
-.qsc-group {
+.network-group, .qsc-group {
   width: 100%;
   scroll-snap-align: start;
   display: flex;
   flex-direction: row;
   flex-shrink: 0;
   margin-bottom: 10px;
-  min-height: 1px;
+  min-height: 50px;
   justify-content: center;
   align-items: center;
-
 }
 
-#network-container::-webkit-scrollbar,
-#qsc-container::-webkit-scrollbar {
+#network-container::-webkit-scrollbar, #qsc-container::-webkit-scrollbar {
   display: none;
 }
 
-.network-card,
-.qsc-card {
-  width: calc(33.33% - 20px);
-  margin-right: 10px;
-}
-
-/* Remove the margin-right from the last card */
-.network-card:last-of-type,
-.qsc-card:last-of-type {
-  margin-right: 0;
-}
-
-
-
-
 .network-card, .qsc-card {
-
   flex-shrink: 0;
-
   background: blue;
-  width: 34rem;
-  height: 24rem;
+  width: 35rem;
+  height: 20rem;
   float: left;
-
   margin: 1rem;
-
-  background-color: rgb(209, 209, 209);
-  box-shadow: 0 10px 24px 0 rgba(0,0,0,0.8);
+  background-color: rgb(250, 250, 250);
+  box-shadow: 0 8px 18px 0 rgba(0,0,0,0.8);
+  position: flex;
 }
 
-h3 {
-    text-align: center;
+/* Adjust ping */
+.network-card #ping {
+  margin: 0;
+  height: auto;
+  text-align: center;
+
+  margin-top: 2%;
+
+  font-family: 'Lato';
+
 }
 
-#network-tittel, #qsc-tittel {
-    color: rgb(243, 243, 243);
-    margin-top: 1rem;
-    text-align: center;
+/* Adjust gw name */
+.network-card h3 {
+  font-size: 1.4em;
+  margin: 0;
+  height: auto;
+  font-family: 'Lato';
+  text-align: center;
+}
 
+/* Adjust gw name */
+.network-card p {
+  height: auto;
+  font-family: 'Lato';
+}
+
+/* Adjust ISPNAME */
+.network-card #ispname {
+  margin: 0;
+  height: auto;
+  text-align: center;
+  font-family: 'Lato';
+}
+
+/* center ap image */
+.network-card #ap-imggroup {
+  display: flex;
+  justify-content: center;
+}
+
+/* Size of ap image */
+.network-card #ap-img {
+  height: 3rem;
+  margin: 0;
+  padding-top: 0.7rem;
+}
+
+/* Align and center OK and ERROR */
+.network-card div#ap-info {
+  display: flex;
+  justify-content: center;
+  font-family: 'Lato';
+  margin-top: 1rem;
+}
+
+/* Size of checkmark */
+.network-card div#ap-info div#activeap-group img{
+  height: 3em;
+}
+/* Text and icon on same line for OK */
+.network-card div#ap-info div#activeap-group{
+  display: flex;
+  justify-content: center;
+}
+
+/* Size of "error" */
+.network-card div#ap-info div#disconnectedap-group img{
+  height: 3em;
+}
+
+/* Text and icon on same line for error */
+.network-card div#ap-info div#disconnectedap-group {
+  display: flex;
+  justify-content: center;
+  justify-content: space-between;
+}
+
+.network-card div#ap-info div#disconnectedap-group p {
+  margin-left: 7rem;
+}
+
+.network-card div#ap-info div#disconnectedap-group div#ap-group p {
+  margin-right: 2em;
+}
+
+.network-card div#ap-info div#disconnectedap-group p {
+  margin-right: 1em; /* or any other value that works for your design */
+}
+
+.network-card div#ap-info div#activeap-group p {
+  margin-right: 1em; /* or any other value that works for your design */
+}
+
+
+/* Size of user image */
+.network-card div#user-uptime div#users .person-img{
+  height: 4em;
+}
+
+/* Size of user image */
+.network-card div#user-uptime div#users {
+  display: flex;
+  justify-content: center;
+}
+
+.network-card p#wanup {
+  text-align: center;
+}
+
+.qsc-card h3 {
+  font-size: 1.4em;
+  height: auto;
+  font-family: 'Lato';
+  text-align: center;
+}
+
+.qsc-card p#model {
+  height: auto;
+  text-align: center;
+  font-family: 'Lato';
+  margin-top: -1em;
+  margin-bottom: 2em;
+
+}
+
+
+.qsc-card div#qscgroup img {
+  height: 3em;
+}
+
+.qsc-card div#qscgroup div#okqsc {
+  display: flex;
+}
+
+.qsc-card div#qscgroup div#errorqsc {
+  display: flex;
+  margin-left: 4em;
+}
+
+.qsc-card div#qscgroup {
+  display: flex;
+  justify-content: center;
+}
+
+.qsc-card div#qscgroup p {
+  margin-right: 1em;
+  font-family: 'Lato';
+}
+
+.qsc-card p#qscuptime {
+  height: auto;
+  text-align: center;
+  font-family: 'Lato';
+}
+
+.qsc-card p#qscuptime {
+  height: auto;
+  text-align: center;
+  font-family: 'Lato';
+  margin-top: 3em;
+  font-size: 1.1em;
+}
+
+.qsc-card p#design {
+  text-align: center;
+  font-family: 'Lato';
+  margin-top: 3em;
+  color: rgb(95, 95, 95);
 }

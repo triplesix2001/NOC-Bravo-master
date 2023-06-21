@@ -13,6 +13,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
         <link rel="stylesheet" href="style.css">
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Lato&family=Rubik&display=swap');
+        </style>
     </head>
     <body>
         <h1 id="network-tittel">Network</h1>
@@ -24,12 +27,16 @@
                     <div class="network-group" data-scrollpos="0">
                         <% for (var j = i; j < Math.min(i + 3, network.length); j++) { %>
                             <div class="network-card">
-                                <h3>{{ network[j].gw_name }}</h3>
-                                <p>Linje 1</p>
-                                <p>Linje 2</p>
-                                <p>Linje 3</p>
-                                <p>Linje 4</p>
-                                <p>Linje 5</p>
+                                <p>Ping</p>
+                                <h3 id="h3-network">gw_name</h3>
+                                <p>ispname</p>
+                                <p>totalap</p>
+                                <p>totalapdsc</p>
+                                <div id="users">
+                                <p>Usrs: ${data.network[j].users}</p>
+                                <img src="img/person.png" class="person-img"></img>
+                                </div>
+                                <p>wanup</p>
                             </div>
                         <% } %>
                     </div>
@@ -45,7 +52,7 @@
                                 <p>Linje 1</p>
                                 <p>Linje 2</p>
                                 <p>Linje 3</p>
-                                <p>Linje 4</p>
+                                <p id="qscuptime">Linje4</p>
                                 <p>Linje 5</p>
                             </div>
                         <% } %>

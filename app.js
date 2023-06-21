@@ -33,6 +33,6 @@ app.get('/api/data', async (req, res) => {
 });
 
 
-app.listen(3000, () => {
-  console.log('Server on localhost:3000');
+app.listen(3000, '0.0.0.0', function() {
+  console.log('Listening to port:  ' + 3000);
 });
