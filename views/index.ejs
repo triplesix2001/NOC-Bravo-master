@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+    <head>
+        <base href="/">
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <h1 id="network-tittel">Network</h1>
+
+
+        <div id="info-wrapper">
+            <div id="network-container">
+                <% for (var i = 0; i < network.length; i += 3) { %>
+                    <div class="network-group" data-scrollpos="0">
+                        <% for (var j = i; j < Math.min(i + 3, network.length); j++) { %>
+                            <div class="network-card">
+                                <h3>{{ network[j].gw_name }}</h3>
+                                <p>Linje 1</p>
+                                <p>Linje 2</p>
+                                <p>Linje 3</p>
+                                <p>Linje 4</p>
+                                <p>Linje 5</p>
+                            </div>
+                        <% } %>
+                    </div>
+                <% } %>
+            </div>
+            <h1 id="qsc-tittel">QSC</h1>
+            <div id="qsc-container">
+                <% for (var i = 0; i < qsc.length; i += 3) { %>
+                    <div class="qsc-group" data-scrollpos="0">
+                        <% for (var j = i; j < Math.min(i + 3, qsc.length); j++) { %>
+                            <div class="qsc-card">
+                                <h3>Tittel</h3>
+                                <p>Linje 1</p>
+                                <p>Linje 2</p>
+                                <p>Linje 3</p>
+                                <p>Linje 4</p>
+                                <p>Linje 5</p>
+                            </div>
+                        <% } %>
+                    </div>
+                <% } %>
+            </div>
+        </div>
+
+            
+        </div>
+        <script src="refresh.js"></script>
+    </body>
+</html>

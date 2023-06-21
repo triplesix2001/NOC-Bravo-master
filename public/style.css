@@ -1,0 +1,76 @@
+body {
+    background-color: rgb(50, 50, 50);
+}
+
+#info-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+#network-container,
+#qsc-container {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+}
+
+.network-group,
+.qsc-group {
+  width: 100%;
+  scroll-snap-align: start;
+  display: flex;
+  flex-direction: row;
+  flex-shrink: 0;
+  margin-bottom: 10px;
+  min-height: 1px;
+  justify-content: center;
+  align-items: center;
+
+}
+
+#network-container::-webkit-scrollbar,
+#qsc-container::-webkit-scrollbar {
+  display: none;
+}
+
+.network-card,
+.qsc-card {
+  width: calc(33.33% - 20px);
+  margin-right: 10px;
+}
+
+/* Remove the margin-right from the last card */
+.network-card:last-of-type,
+.qsc-card:last-of-type {
+  margin-right: 0;
+}
+
+
+
+
+.network-card, .qsc-card {
+
+  flex-shrink: 0;
+
+  background: blue;
+  width: 34rem;
+  height: 24rem;
+  float: left;
+
+  margin: 1rem;
+
+  background-color: rgb(209, 209, 209);
+  box-shadow: 0 10px 24px 0 rgba(0,0,0,0.8);
+}
+
+h3 {
+    text-align: center;
+}
+
+#network-tittel, #qsc-tittel {
+    color: rgb(243, 243, 243);
+    margin-top: 1rem;
+    text-align: center;
+
+}
